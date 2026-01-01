@@ -214,23 +214,23 @@ module "dns" {
 
 ## Inputs
 
-| Name    | Description                                     | Type           | Default | Required |
-| ------- | ----------------------------------------------- | -------------- | ------- | :------: |
-| domain  | The domain name (UUID or name) for the DNS zone | `string`       | n/a     |   yes    |
-| records | List of DNS records to create                   | `list(object)` | `[]`    |    no    |
+| Name      | Description                                     | Type           | Default | Required |
+| --------- | ----------------------------------------------- | -------------- | ------- | :------: |
+| `domain`  | The domain name (UUID or name) for the DNS zone | `string`       | n/a     |   Yes    |
+| `records` | List of DNS records to create                   | `list(object)` | `[]`    |    No    |
 
 ### Record Object Structure
 
-| Field          | Description                                                                      | Type     | Default                                          | Required |
-| -------------- | -------------------------------------------------------------------------------- | -------- | ------------------------------------------------ | :------: |
-| name           | The name of the record                                                           | `string` | n/a                                              |   yes    |
-| type           | Record type (a, aaaa, aname, caa, cname, dkim, mx, ns, ptr, spf, srv, tlsa, txt) | `string` | n/a                                              |   yes    |
-| key            | Unique identifier for duplicate name records (auto-generated if not provided)    | `string` | `{name}_{type}_{index}`                          |    no    |
-| ttl            | Time to live in seconds (60-86400)                                               | `number` | `120`                                            |    no    |
-| cloud          | Whether record is managed by ArvanCloud CDN                                      | `bool`   | `true` for A/AAAA/CNAME/ANAME, `false` otherwise |    no    |
-| upstream_https | HTTPS config: default, auto, http, https                                         | `string` | `"default"`                                      |    no    |
-| ip_filter_mode | IP filtering configuration                                                       | `object` | See below                                        |    no    |
-| value          | Record value object (varies by type)                                             | `object` | n/a                                              |   yes    |
+| Field            | Description                                                                      | Type     | Default                                          | Required |
+| ---------------- | -------------------------------------------------------------------------------- | -------- | ------------------------------------------------ | :------: |
+| `name`           | The name of the record                                                           | `string` | n/a                                              |   Yes    |
+| `type`           | Record type (a, aaaa, aname, caa, cname, dkim, mx, ns, ptr, spf, srv, tlsa, txt) | `string` | n/a                                              |   Yes    |
+| `key`            | Unique identifier for duplicate name records (auto-generated if not provided)    | `string` | `{name}_{type}_{index}`                          |    No    |
+| `ttl`            | Time to live in seconds (60-86400)                                               | `number` | `120`                                            |    No    |
+| `cloud`          | Whether record is managed by ArvanCloud CDN                                      | `bool`   | `true` for A/AAAA/CNAME/ANAME, `false` otherwise |    No    |
+| `upstream_https` | HTTPS config: default, auto, http, https                                         | `string` | `"default"`                                      |    No    |
+| `ip_filter_mode` | IP filtering configuration                                                       | `object` | See below                                        |    No    |
+| `value`          | Record value object (varies by type)                                             | `object` | n/a                                              |   Yes    |
 
 ### Handling Duplicate Record Names
 
@@ -268,11 +268,11 @@ records = [
 
 ### IP Filter Mode
 
-| Field      | Description     | Values                        | Default  |
-| ---------- | --------------- | ----------------------------- | -------- |
-| count      | Count mode      | `single`, `multi`             | `single` |
-| order      | Order mode      | `none`, `weighted`, `rr`      | `none`   |
-| geo_filter | Geo filter mode | `none`, `location`, `country` | `none`   |
+| Field        | Description     | Values                        | Default  |
+| ------------ | --------------- | ----------------------------- | -------- |
+| `count`      | Count mode      | `single`, `multi`             | `single` |
+| `order`      | Order mode      | `none`, `weighted`, `rr`      | `none`   |
+| `geo_filter` | Geo filter mode | `none`, `location`, `country` | `none`   |
 
 ### Record Value Types
 
@@ -389,23 +389,23 @@ value = {
 
 ## Outputs
 
-| Name           | Description                              |
-| -------------- | ---------------------------------------- |
-| a_records      | A record details (id, name, type)        |
-| aaaa_records   | AAAA record details                      |
-| aname_records  | ANAME record details                     |
-| caa_records    | CAA record details                       |
-| cname_records  | CNAME record details                     |
-| dkim_records   | DKIM record details                      |
-| mx_records     | MX record details                        |
-| ns_records     | NS record details                        |
-| ptr_records    | PTR record details                       |
-| spf_records    | SPF record details                       |
-| srv_records    | SRV record details                       |
-| tlsa_records   | TLSA record details                      |
-| txt_records    | TXT record details                       |
-| all_record_ids | Map of all record IDs organized by type  |
-| record_count   | Count of records by type including total |
+| Name             | Description                              |
+| ---------------- | ---------------------------------------- |
+| `a_records`      | A record details (id, name, type)        |
+| `aaaa_records`   | AAAA record details                      |
+| `aname_records`  | ANAME record details                     |
+| `caa_records`    | CAA record details                       |
+| `cname_records`  | CNAME record details                     |
+| `dkim_records`   | DKIM record details                      |
+| `mx_records`     | MX record details                        |
+| `ns_records`     | NS record details                        |
+| `ptr_records`    | PTR record details                       |
+| `spf_records`    | SPF record details                       |
+| `srv_records`    | SRV record details                       |
+| `tlsa_records`   | TLSA record details                      |
+| `txt_records`    | TXT record details                       |
+| `all_record_ids` | Map of all record IDs organized by type  |
+| `record_count`   | Count of records by type including total |
 
 ## Notes
 
