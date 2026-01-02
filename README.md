@@ -1,7 +1,7 @@
 # Terraform ArvanCloud DNS Module
 
 ![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.5-623CE4?logo=terraform)
-![Version](https://img.shields.io/github/v/release/terraform-r1c-modules/terraform-r1c-dns?logo=github&color=red&label=Version)
+![Version](https://img.shields.io/github/v/release/terraform-r1c-modules/terraform-r1c-cdn-dns?logo=github&color=red&label=Version)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
 Terraform module to manage ArvanCloud CDN DNS records with support for all record types.
@@ -18,8 +18,8 @@ Terraform module to manage ArvanCloud CDN DNS records with support for all recor
 ### Basic Example
 
 ```hcl
-module "dns" {
-  source = "git@github.com:terraform-r1c-modules/Terraform-R1C-DNS.git?ref=main"
+module "cdn_dns" {
+  source = "git@github.com:terraform-r1c-modules/Terraform-R1C-CDN-DNS.git?ref=main"
 
   domain = "example.ir"
 
@@ -48,8 +48,8 @@ module "dns" {
 ### Advanced Example with All Record Types
 
 ```hcl
-module "dns" {
-  source = "git@github.com:terraform-r1c-modules/Terraform-R1C-DNS.git?ref=main"
+module "cdn_dns" {
+  source = "git@github.com:terraform-r1c-modules/Terraform-R1C-CDN-DNS.git?ref=main"
 
   domain = "example.ir"
 
