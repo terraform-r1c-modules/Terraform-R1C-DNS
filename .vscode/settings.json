@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["aname", "hostnames", "iodef", "issuewild", "tlsa"]
+  "cSpell.words": [
+    "aname",
+    "domainkey",
+    "hostnames",
+    "iodef",
+    "issuewild",
+    "letsencrypt",
+    "tlsa"
+  ]
 }
