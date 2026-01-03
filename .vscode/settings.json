@@ -1,11 +1,16 @@
 {
   "cSpell.words": [
+    "adkim",
     "aname",
+    "aspf",
+    "autodiscover",
+    "DMARC",
     "domainkey",
     "hostnames",
     "iodef",
     "issuewild",
     "letsencrypt",
-    "tlsa"
+    "tlsa",
+    "xmpp"
   ]
 }
